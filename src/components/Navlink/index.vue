@@ -6,12 +6,8 @@
   </router-link>
 </template>
 
-<script>
-export default {
-  name: "Navlink",
-  props: {
-    path: String,
-    text: String
-  }
-};
+
+<script src="./Navlink.js">
 </script>
+<style src="./Navlink.css">
+</style>

@@ -1,4 +1,5 @@
-export const setLanguage = ({ commit }, language) => {
-  debugger;
-  commit("setLanguage", language);
+export const setLanguage = ({ commit }, evt) => {
+  const language = evt.target.value;
+
+  commit("changeLanguage", language);
 };

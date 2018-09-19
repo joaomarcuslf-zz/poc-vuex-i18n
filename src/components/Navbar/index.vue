@@ -2,19 +2,19 @@
   <nav id="navbar" class="navbar is-fixed-top">
     <div class="container">
       <div class="navbar-brand">
-        <div class="navbar-brand">
-          <div class="navbar-item">
-            <a class="has-dropdown is-hoverable">
-              <h2 class="subtitle has-text-centered">
-                {{ $t("message.hello") }} <a href="https://github.com/joaomarcuslf">@joaomarcuslf</a>
-              </h2>
-            </a>
-          </div>
+        <div class="navbar-item">
+          <a class="has-dropdown is-hoverable">
+            <h2 class="subtitle has-text-centered">
+              {{ $t("message.hello") }} <a href="https://github.com/joaomarcuslf">@joaomarcuslf</a>
+            </h2>
+          </a>
+        </div>
 
-          <div class="navbar-item">
-            <LanguageChanger />
-          </div>
+        <div class="navbar-item">
+          <LanguageChanger />
+        </div>
 
+        <div class="navbar-item">
           <span class="navbar-burger burger" data-target="navbarMenu" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
             <span></span>
             <span></span>
@@ -44,18 +44,7 @@
   </nav>
 </template>
 
-<script>
-import LanguageChanger from "@/components/LanguageChanger";
-import Navlink from "@/components/Navlink";
-
-export default {
-  name: "Navbar",
-  components: {
-    LanguageChanger,
-    Navlink
-  },
-  data() {
-    return { showNav: false };
-  }
-};
+<script src="./Navbar.js">
 </script>
+<style src="./Navbar.css">
+</style>

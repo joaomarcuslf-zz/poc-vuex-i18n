@@ -1,22 +1,3 @@
-<template>
-  <div class="select locale-changer">
-    <select>
-      <option
-        v-for="(lang, i) in langs"
-        :key="`Lang${i}`"
-        :value="lang.code"
-        :selected="lang.code === selectedLanguage"
-        v-on:click="setLanguage(lang.code)"
-      >
-        {{ lang.label }}
-      </option>
-    </select>
-
-    {{selectedLanguage}}
-  </div>
-</template>
-
-<script>
 import { mapState, mapActions } from "vuex";
 
 export default {
@@ -40,4 +21,3 @@ export default {
   }),
   methods: mapActions(["setLanguage"])
 };
-</script>
