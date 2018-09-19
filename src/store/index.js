@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 import * as actions from "@/store/actions";
 import * as mutations from "@/store/mutations";
+import * as modules from "@/store/modules";
 
 export default new Vuex.Store({
   plugins: [createLogger()],
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     language: "pt"
   },
   mutations,
-  actions
+  actions,
+  modules
 });

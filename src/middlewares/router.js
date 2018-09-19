@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
+
+import store from "@/store";
+
 import Home from "@/views/Home";
-import { hasToken, getToken, setToken } from "@/helpers/storage";
 
 Vue.use(Router);
 
@@ -32,18 +34,15 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!hasToken()) {
-      return getToken()
-        .then(setToken)
-        .then(() => next())
-        .catch(() => {
-          return next({
-            path: "/",
-            params: { nextUrl: to.fullPath }
-          });
+    return store
+      .dispatch("getAuthToken")
+      .then(() => next())
+      .catch(() => {
+        return next({
+          path: "/",
+          params: { nextUrl: to.fullPath }
         });
-    }
-    return next();
+      });
   }
 
   next();
