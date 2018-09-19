@@ -13,7 +13,5 @@
   </div>
 </template>
 
-<script src="./LanguageChanger.js">
-</script>
-<style src="./LanguageChanger.css">
-</style>
+<script src="./LanguageChanger.js" />
+<style src="./LanguageChanger.css" />

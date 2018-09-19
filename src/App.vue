@@ -1,5 +1,5 @@
 <template>
-  <section id="app" class="hero is-fullheight is-default is-bold">
+  <section id="app" class="hero is-fullheight is-default is-bold is-dark">
     <div class="hero-head">
       <Navbar />
     </div>
@@ -13,7 +13,7 @@
       <div class="container">
         <div class="tabs is-centered">
           <ul>
-            <li><a>And this is the bottom</a></li>
+            <li><a>{{ $t('message.footer') }}</a></li>
           </ul>
         </div>
       </div>

@@ -1,3 +1,5 @@
 {
-  "hello": "Olá!"
+  "hello": "Olá",
+  "helloMessage": "Para um guia e receitas sobre configuração / customização deste projeto.\n veja em",
+  "footer": "Esse é o fim do site"
 }

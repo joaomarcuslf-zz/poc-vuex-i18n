@@ -1,5 +1,5 @@
 <template>
-  <router-link tag="li" :to="path" exact>
+  <router-link tag="div" :to="path" exact>
     <a class="navbar-item">
       {{ text }}
     </a>
@@ -7,7 +7,5 @@
 </template>
 
 
-<script src="./Navlink.js">
-</script>
-<style src="./Navlink.css">
-</style>
+<script src="./Navlink.js" />
+<style src="./Navlink.css" />
