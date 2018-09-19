@@ -14,9 +14,9 @@
       </div>
     </div>
 
-    <div id="navMenu" class="navbar-menu" :class="{ 'is-active': showNav }">
+    <div id="navMenu" class="navbar-menu" :class="{ 'is-active': showNav }" @click="showNav = !showNav">
       <div class="navbar-end">
-        <div class="navbar-item">
+        <div class="navbar-item is-fullwidth">
           <LanguageChanger />
         </div>
 

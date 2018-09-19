@@ -7,7 +7,8 @@ const i18n = new VueI18n({
   locale: "pt",
   messages: {
     pt: require("@/languages/pt_BR"),
-    en: require("@/languages/en_US")
+    en: require("@/languages/en_US"),
+    fr: require("@/languages/fr_FR")
   }
 });
 

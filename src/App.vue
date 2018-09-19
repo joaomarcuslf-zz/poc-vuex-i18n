@@ -11,9 +11,10 @@
 
     <div class="hero-foot">
       <div class="container">
-        <div class="tabs is-centered">
+        <div class="has-text-centered">
           <ul>
-            <li><a>{{ $t('message.footer') }}</a></li>
+            <li>{{ $t('message.footer') }}</li>
+            <li>{{ getLastDate() }}</li>
           </ul>
         </div>
       </div>
@@ -31,10 +32,19 @@
 <script>
 import Navbar from "@/components/Navbar";
 
+import moment from "@/helpers/moment";
+
 export default {
   name: "app",
   components: {
     Navbar
+  },
+  methods: {
+    getLastDate: function() {
+      return moment(this.$i18n.locale)
+        .format(this.$t("date.format"))
+        .toString();
+    }
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="select locale-changer">
+  <div class="select locale-changer is-fullwidth">
     <select @change="setLanguage">
       <option
         v-for="(lang, i) in langs"

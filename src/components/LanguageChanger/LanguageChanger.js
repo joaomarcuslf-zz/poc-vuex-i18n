@@ -4,16 +4,7 @@ export default {
   name: "locale-changer",
   data() {
     return {
-      langs: [
-        {
-          code: "pt",
-          label: "Português"
-        },
-        {
-          code: "en",
-          label: "English"
-        }
-      ]
+      langs: require("@/languages/index.json")
     };
   },
   computed: mapState({
