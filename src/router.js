@@ -1,10 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/views/Home";
+import { hasToken, getToken, setToken } from "@/helpers/storage";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   linkActiveClass: "is-active",
@@ -15,12 +16,37 @@ export default new Router({
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ "@/views/About")
+      path: "/states",
+      name: "states",
+      meta: { requiresAuth: true },
+      component: () => import(/* webpackChunkName: "states" */ "@/views/States")
+    },
+    {
+      path: "*",
+      name: "404",
+      component: () =>
+        import(/* webpackChunkName: "notfound" */ "@/views/NotFound")
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!hasToken()) {
+      return getToken()
+        .then(setToken)
+        .then(() => next())
+        .catch(() => {
+          return next({
+            path: "/",
+            params: { nextUrl: to.fullPath }
+          });
+        });
+    }
+    return next();
+  }
+
+  next();
+});
+
+export default router;

@@ -26,8 +26,8 @@
         />
 
         <Navlink
-          path="/about"
-          v-bind:text="$t('button.about')"
+          path="/states"
+          v-bind:text="$t('button.states')"
         />
       </div>
     </div>
